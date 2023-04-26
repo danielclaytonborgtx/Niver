@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { Card } from '../../components/Card';
 
@@ -29,16 +29,16 @@ export function Home() {
     localStorage.setItem("students", JSON.stringify(newArrayStudents))
   }
 
-  // useEffect(() => {
-  //   fetch ('https://api.github.com/users/danielclaytonborgtx')
-  //   .then (res => res.json())
-  //   .then (data => {
-  //     setUser({
-  //       name: data.name,
-  //       avatar: data.avatar_url,
-  //     })
-  //   })
-  // }, []);
+  useEffect(() => {
+    fetch ('https://api.github.com/users/danielclaytonborgtx')
+    .then (res => res.json())
+    .then (data => {
+      setUser({
+        name: data.name,
+        avatar: data.avatar_url,
+      })
+    })
+  }, []);
 
   return (
     <div className="container">
@@ -46,7 +46,7 @@ export function Home() {
         <h1>Lista de presença</h1>
         <div>
           <strong>Meu niver</strong>
-          {/* <img src={user.avatar} alt="" /> */}
+          <img src={user.avatar} alt="" /> 
         </div>
       </header>
       
