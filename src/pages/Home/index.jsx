@@ -46,7 +46,7 @@ export function Home() {
         <h1>Lista de presença</h1>
         <div>
           <strong>Meu niver</strong>
-          <img src={user.avatar} alt="" /> 
+          {/* <img src={user.avatar} alt="" />  */}
         </div>
       </header>
       
